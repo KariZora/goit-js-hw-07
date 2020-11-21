@@ -9,18 +9,13 @@ const ingredients = [
 
 const ul = document.querySelector('#ingredients');
 
-const li1 = document.createElement('li');
-const li2 = document.createElement('li');
-const li3 = document.createElement('li');
-const li4 = document.createElement('li');
-const li5 = document.createElement('li');
-const li6 = document.createElement('li');
+function createList(item) {
+    const li = document.createElement('li');
+    li.textContent = item;
+    return li;
+}
 
-const list = [li1, li2, li3, li4, li5, li6]
+const list = ingredients.map(createList);
 
-    for(let i=0; i<6; i+=1) {
-        list[i].textContent = ingredients[i];
-    }
-
-ul.append(...list)
+ul.append(...list);
 
